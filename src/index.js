@@ -1,17 +1,49 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Education from "./Education";
+import Experience from "./Experience";
+import Exposure from "./Exposure";
+import FlipCard from './FlipCard';
+import Menu from './Menu';
+import SocialMedia from "./SocialMedia";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Menu />
+      <body>
+          <div className="row">
+              <ColumnLeftSide />
+              <ColumnMiddle />
+              <ColumnRightSide />
+          </div>
+      </body>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+function ColumnLeftSide() {
+    return (
+        <div className="column side">
+            <FlipCard />
+            <Exposure />
+            <Education />
+        </div>
+    )
+}
+
+function ColumnMiddle() {
+    return (
+        <div className="column middle">
+            <Experience />
+        </div>
+    )
+}
+
+function ColumnRightSide() {
+    return (
+        <div className="column side">
+            <SocialMedia />
+        </div>
+    )
+}
